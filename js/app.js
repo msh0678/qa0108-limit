@@ -1,3 +1,4 @@
+// 개발용 미리보기: http://localhost:3000
 // QA 한도 시험 - 버튼 클릭 시 숫자 1씩 증가, localStorage에 저장
 (function () {
   var KEY = "qa0108-limit-count";
