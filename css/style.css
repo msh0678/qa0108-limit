@@ -1,0 +1,31 @@
+/* QA 한도 시험 - 작은 화면용 스타일 */
+:root {
+  --primary: #1a73e8; /* 주색 */
+  --accent: #ff7043;  /* 강조색 */
+  --bg: #f4f6f8;      /* 중립 배경 */
+  --text: #222;       /* 본문 */
+  --muted: #666;      /* 보조 문구 */
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  display: flex; justify-content: center; align-items: center;
+  min-height: 100vh; padding: 20px;
+}
+.card {
+  background: #fff; border-radius: 16px; padding: 32px 28px;
+  max-width: 380px; width: 100%; text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+h1 { margin: 0 0 8px; font-size: 24px; }
+.desc { margin: 0 0 16px; color: var(--muted); font-size: 15px; }
+.count { font-size: 18px; margin: 16px 0; }
+.count strong { color: var(--primary); font-size: 28px; margin-left: 4px; }
+#plusBtn {
+  background: var(--primary); color: #fff; border: 0; border-radius: 12px;
+  font-size: 18px; font-weight: 700; padding: 14px 28px; min-height: 48px; min-width: 160px;
+  cursor: pointer;
+}
+#plusBtn:active { background: var(--accent); }
+.note { margin: 16px 0 0; font-size: 13px; color: var(--muted); }
