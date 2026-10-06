@@ -25,5 +25,28 @@
     try { localStorage.setItem(KEY, String(count)); } catch (e) { /* 무시 */ }
   });
 
+  var resetBtn = document.getElementById("resetBtn");
+  var armed = false;
+  var armTimer = null;
+  function disarm() {
+    armed = false;
+    resetBtn.textContent = "0으로";
+    if (armTimer) { clearTimeout(armTimer); armTimer = null; }
+  }
+  // 초기화 확인은 화면 안 2단계 누름으로 처리 (confirm 미사용)
+  resetBtn.addEventListener("click", function () {
+    if (!armed) {
+      armed = true;
+      resetBtn.textContent = "정말 0으로? 다시 누르기";
+      if (armTimer) { clearTimeout(armTimer); }
+      armTimer = setTimeout(disarm, 3000);
+      return;
+    }
+    count = 0;
+    render();
+    try { localStorage.setItem(KEY, String(count)); } catch (e) { /* 무시 */ }
+    disarm();
+  });
+
   render();
 })();

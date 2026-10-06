@@ -9,7 +9,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--bg); color: var(--text);
-  font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
   display: flex; justify-content: center; align-items: center;
   min-height: 100vh; padding: 20px;
 }
@@ -29,3 +29,14 @@ h1 { margin: 0 0 8px; font-size: 24px; }
 }
 #plusBtn:active { background: var(--accent); }
 .note { margin: 16px 0 0; font-size: 13px; color: var(--muted); }
+#resetBtn {
+  background: #fff; color: var(--primary); border: 1px solid var(--primary);
+  border-radius: 12px; font-size: 16px; font-weight: 700;
+  padding: 12px 20px; min-height: 44px; min-width: 120px; margin-top: 8px;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  body { padding: 12px; align-items: flex-start; }
+  .card { padding: 24px 18px; border-radius: 12px; }
+  h1 { font-size: 20px; }
+}
